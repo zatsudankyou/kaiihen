@@ -1,6 +1,22 @@
 #include "DxLib.h"
 #include "LoadImg.h"
 
+int PlayerImg;
+int AmmoImg;
+int BackImg;
+int LogoImg;
+int SelectMainMenuImg0;
+int SelectMainMenuImg1;
+int SelectMainMenuImg2;
+int SelectMainMenuImg3;
+int SelectMainMenuImg0N;
+int SelectMainMenuImg1N;
+int SelectMainMenuImg2N;
+int SelectMainMenuImg3N;
+int AboutImg;
+int WeponImg;
+int MBackImg;
+
 /* ここで画像ロード処理のすべてを扱います。
 新たな関数はLoadImg.hで宣言し、
 別のcppファイルで画像ロードを行う際はLoadImg.hをincludeして下さい
@@ -32,7 +48,7 @@ void M_MenuLoadImg() {
 }*/
 
 //メインメニュー選択項目描画
-
+/*これについては、メインメニューを分割する*/
 
 //ゲームの背景ロード・描画
 void GameBackLoadImg()
@@ -41,4 +57,4 @@ void GameBackLoadImg()
 }
 
 // プレイヤーを描画
-
+/*これについては、Player.h並びにPlayer.cppに記述*/
