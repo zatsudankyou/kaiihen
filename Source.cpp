@@ -1,26 +1,13 @@
 #include "DxLib.h"
+#include "Player.h"
+#include "LoadImg.h"
  
-int PlayerX, PlayerY;
-int WeponX, WeponY;
+
 //弾幕は数が多いので配列を使用
 int AmmoX[20], AmmoY[20];
-int PlayerGraph;
-int WeponGraph;
-int AmmoGraph;
-int BackGraph;
-int LogoGraph;
-int SelectMainMenuGraph0;
-int SelectMainMenuGraph1;
-int SelectMainMenuGraph2;
-int SelectMainMenuGraph3;
-int SelectMainMenuGraph0N;
-int SelectMainMenuGraph1N;
-int SelectMainMenuGraph2N;
-int SelectMainMenuGraph3N;
 int MouseX, MouseY;
 int SelectMainMenu = 0;
 int SelectSetting = 0;
-int AboutGraph;
 int UseFont;
 
 //乱数用の変数
@@ -45,17 +32,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	//使用する画像をロード
-	PlayerGraph = LoadGraph("Player.png");
-	WeponGraph = LoadGraph("Wepon.png");
-	AmmoGraph = LoadGraph("Ammo.png");
-	SelectMainMenuGraph0 = LoadGraph("MenuSelect0.png");
-	SelectMainMenuGraph1 = LoadGraph("MenuSelect1.png");
-	SelectMainMenuGraph2 = LoadGraph("MenuSelect2.png");
-	SelectMainMenuGraph3 = LoadGraph("MenuSelect3.png");
-	SelectMainMenuGraph0N = LoadGraph("MenuSelect0N.png");
-	SelectMainMenuGraph1N = LoadGraph("MenuSelect1N.png");
-	SelectMainMenuGraph2N = LoadGraph("MenuSelect2N.png");
-	SelectMainMenuGraph3N = LoadGraph("MenuSelect3N.png");
+	void LoadImg();
 
 
 
@@ -63,11 +40,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_Z) == 0)
 	{
 		MENU:
-		BackGraph = LoadGraph("MainMBack.png");
-		LogoGraph = LoadGraph("Logo.png");
-		//背景とロゴを描画
-		DrawGraph(0, 0, BackGraph, TRUE);
-		DrawGraph(80, 30, LogoGraph, TRUE);
+		//背景とロゴをロード・描画
+		void M_MenuLoadImg();
+
+		
 		// 続行用のキーを表示
 		DrawString(0, 0, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n選択はZキーです。\n上下キーで項目を変更。", GetColor(255, 255, 255));
 		//項目を選択
@@ -93,41 +69,43 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			SelectMainMenu = 3;
 		}
 		//選択項目を描画
-		if (SelectMainMenu == 0)
-		{
-			DrawGraph(240, 170, SelectMainMenuGraph0, TRUE);
-			DrawGraph(240, 250, SelectMainMenuGraph1N, TRUE);
-			DrawGraph(240, 330, SelectMainMenuGraph2N, TRUE);
-			DrawGraph(240, 410, SelectMainMenuGraph3N, TRUE);
-		}
-		else if (SelectMainMenu == 1)
-		{
-			DrawGraph(240, 170, SelectMainMenuGraph0N, TRUE);
-			DrawGraph(240, 250, SelectMainMenuGraph1, TRUE);
-			DrawGraph(240, 330, SelectMainMenuGraph2N, TRUE);
-			DrawGraph(240, 410, SelectMainMenuGraph3N, TRUE);
-		}
-		else if (SelectMainMenu == 2)
-		{
-			DrawGraph(240, 170, SelectMainMenuGraph0N, TRUE);
-			DrawGraph(240, 250, SelectMainMenuGraph1N, TRUE);
-			DrawGraph(240, 330, SelectMainMenuGraph2, TRUE);
-			DrawGraph(240, 410, SelectMainMenuGraph3N, TRUE);
-		}
-		else if (SelectMainMenu == 3)
-		{
-			DrawGraph(240, 170, SelectMainMenuGraph0N, TRUE);
-			DrawGraph(240, 250, SelectMainMenuGraph1N, TRUE);
-			DrawGraph(240, 330, SelectMainMenuGraph2N, TRUE);
-			DrawGraph(240, 410, SelectMainMenuGraph3, TRUE);
-		}
-		else
-		{
-			DrawGraph(240, 170, SelectMainMenuGraph0N, TRUE);
-			DrawGraph(240, 250, SelectMainMenuGraph1N, TRUE);
-			DrawGraph(240, 330, SelectMainMenuGraph2N, TRUE);
-			DrawGraph(240, 410, SelectMainMenuGraph3N, TRUE);
-		}
+			if (SelectMainMenu == 0)
+			{
+				DrawGraph(240, 170, SelectMainMenuImg0, TRUE);
+				DrawGraph(240, 250, SelectMainMenuImg1N, TRUE);
+				DrawGraph(240, 330, SelectMainMenuImg2N, TRUE);
+				DrawGraph(240, 410, SelectMainMenuImg3N, TRUE);
+			}
+			else if (SelectMainMenu == 1)
+			{
+				DrawGraph(240, 170, SelectMainMenuImg0N, TRUE);
+				DrawGraph(240, 250, SelectMainMenuImg1, TRUE);
+				DrawGraph(240, 330, SelectMainMenuImg2N, TRUE);
+				DrawGraph(240, 410, SelectMainMenuImg3N, TRUE);
+			}
+			else if (SelectMainMenu == 2)
+			{
+				DrawGraph(240, 170, SelectMainMenuImg0N, TRUE);
+				DrawGraph(240, 250, SelectMainMenuImg1N, TRUE);
+				DrawGraph(240, 330, SelectMainMenuImg2, TRUE);
+				DrawGraph(240, 410, SelectMainMenuImg3N, TRUE);
+			}
+			else if (SelectMainMenu == 3)
+			{
+				DrawGraph(240, 170, SelectMainMenuImg0N, TRUE);
+				DrawGraph(240, 250, SelectMainMenuImg1N, TRUE);
+				DrawGraph(240, 330, SelectMainMenuImg2N, TRUE);
+				DrawGraph(240, 410, SelectMainMenuImg3, TRUE);
+			}
+			else
+			{
+				DrawGraph(240, 170, SelectMainMenuImg0N, TRUE);
+				DrawGraph(240, 250, SelectMainMenuImg1N, TRUE);
+				DrawGraph(240, 330, SelectMainMenuImg2N, TRUE);
+				DrawGraph(240, 410, SelectMainMenuImg3N, TRUE);
+			}
+		
+
 		// 裏画面の内容を表画面に反映させる
 		ScreenFlip();
 		Sleep(75);
@@ -136,7 +114,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		if (SelectMainMenu == 0)
 		{
 
-			BackGraph = LoadGraph("back.png");
+			void GameBackLoadImg();
 
 			// キャラクターの初期位置をセット
 			PlayerX = 10;
@@ -202,13 +180,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				ClearDrawScreen();
 
 				// プレイヤーを描画する
-				DrawGraph(0, 0, BackGraph, TRUE);
-				DrawGraph(PlayerX, PlayerY, PlayerGraph, TRUE);
-				DrawGraph(WeponX, WeponY, WeponGraph, TRUE);
+					DrawGraph(0, 0, BackImg, TRUE);
+					DrawGraph(PlayerX, PlayerY, PlayerImg, TRUE);
+					DrawGraph(WeponX, WeponY, WeponImg, TRUE);
 				//敵の弾幕を表示
 				for (int i = 0; i < 20; i++)
 				{
-					DrawGraph(AmmoX[i], AmmoY[i], AmmoGraph, TRUE);
+					DrawGraph(AmmoX[i], AmmoY[i], AmmoImg, TRUE);
 				}
 				//説明を追加
 				DrawString(0, 0, "\n移動は矢印キー\n終了するにはXキーを押す。", GetColor(255, 255, 255));
@@ -220,8 +198,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		}
 		else if (SelectMainMenu == 1)
 		{
-			BackGraph = LoadGraph("MainMBack.png");
-			DrawGraph(0, 0, BackGraph, TRUE);
+			BackImg = LoadGraph("MainMBack.png");
+			DrawGraph(0, 0, MBackImg, TRUE);
 
 			while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_X) == 0)
 			{
@@ -280,10 +258,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		}
 		else if (SelectMainMenu == 2)
 		{
-			AboutGraph = LoadGraph("About.png");
+			AboutImg = LoadGraph("About.png");
 			while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_X) == 0)
 			{
-				DrawGraph(0, 0, AboutGraph, TRUE);
+				DrawGraph(0, 0, AboutImg, TRUE);
 				DrawString(0, 0, "このゲームのバージョンは××××です\nほかにもここに著作とかいろいろ情報を載せる予定\n\n終了するにはZキー", GetColor(255, 255, 255));
 				// 裏画面の内容を表画面に反映させる
 				ScreenFlip();
