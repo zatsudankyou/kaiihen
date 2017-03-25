@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include "Player.h"
 #include "LoadImg.h"
+
  
 
 //弾幕は数が多いので配列を使用
@@ -42,6 +43,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		MENU:
 		//背景とロゴをロード・描画
 		void M_MenuLoadImg();
+		
 
 		
 		// 続行用のキーを表示
