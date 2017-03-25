@@ -34,8 +34,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	//使用する画像をロード
 	void LoadImg();
 
-
-
 	//メインメニューのループ
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_Z) == 0)
 	{

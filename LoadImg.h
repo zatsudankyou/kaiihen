@@ -1,26 +1,26 @@
 //二重include防止
 #pragma once
 
-//宣言
+//関数のプロトタイプ宣言
 void LoadImg(); 
 void M_MenuLoadImg();
 void GameBackLoadImg(); 
-void DrawPlayer();
-void DrawM_Menu();
+//void DrawPlayer();
+//void DrawM_Menu();
 
 //ロード画像のプロトタイプ宣言
-int PlayerImg;
-int AmmoImg;
-int BackImg;
-int LogoImg;
-int SelectMainMenuImg0;
-int SelectMainMenuImg1;
-int SelectMainMenuImg2;
-int SelectMainMenuImg3;
-int SelectMainMenuImg0N;
-int SelectMainMenuImg1N;
-int SelectMainMenuImg2N;
-int SelectMainMenuImg3N;
-int AboutImg;
-int WeponImg;
-int MBackImg;
+extern int PlayerImg;
+extern int WeponImg;
+extern int AmmoImg;
+extern int SelectMainMenuImg0;
+extern int SelectMainMenuImg1;
+extern int SelectMainMenuImg2;
+extern int SelectMainMenuImg3;
+extern int SelectMainMenuImg0N;
+extern int SelectMainMenuImg1N;
+extern int SelectMainMenuImg2N;
+extern int SelectMainMenuImg3N;
+extern int AboutImg;
+extern int MBackImg;
+extern int BackImg;
+extern int LogoImg;
