@@ -25,24 +25,24 @@ int MBackImg;
 
 //‰Šú‰æ‘œƒ[ƒhˆ—
 void LoadImg() {
-	PlayerImg = LoadGraph("Player.png");
-	WeponImg = LoadGraph("Wepon.png");
-	AmmoImg = LoadGraph("Ammo.png");
-	SelectMainMenuImg0 = LoadGraph("MenuSelect0.png");
-	SelectMainMenuImg1 = LoadGraph("MenuSelect1.png");
-	SelectMainMenuImg2 = LoadGraph("MenuSelect2.png");
-	SelectMainMenuImg3 = LoadGraph("MenuSelect3.png");
-	SelectMainMenuImg0N = LoadGraph("MenuSelect0N.png");
-	SelectMainMenuImg1N = LoadGraph("MenuSelect1N.png");
-	SelectMainMenuImg2N = LoadGraph("MenuSelect2N.png");
-	SelectMainMenuImg3N = LoadGraph("MenuSelect3N.png");
+	PlayerImg = LoadGraph("Asset/Player.png");
+	WeponImg = LoadGraph("Asset/Wepon.png");
+	AmmoImg = LoadGraph("Asset/Ammo.png");
+	SelectMainMenuImg0 = LoadGraph("Asset/MenuSelect0.png");
+	SelectMainMenuImg1 = LoadGraph("Asset/MenuSelect1.png");
+	SelectMainMenuImg2 = LoadGraph("Asset/MenuSelect2.png");
+	SelectMainMenuImg3 = LoadGraph("Asset/MenuSelect3.png");
+	SelectMainMenuImg0N = LoadGraph("Asset/MenuSelect0N.png");
+	SelectMainMenuImg1N = LoadGraph("Asset/MenuSelect1N.png");
+	SelectMainMenuImg2N = LoadGraph("Asset/MenuSelect2N.png");
+	SelectMainMenuImg3N = LoadGraph("Asset/MenuSelect3N.png");
 
 }
 
 //ƒƒCƒ“ƒƒjƒ…[‚Ì‰æ‘œƒ[ƒhE•`‰æ
 void M_MenuLoadImg() {
-	int BackImg = LoadGraph("MainMBack.png");
-	int LogoImg = LoadGraph("Logo.png");
+	int BackImg = LoadGraph("Asset/MainMBack.png");
+	int LogoImg = LoadGraph("Asset/Logo.png");
 	//”wŒi‚ÆƒƒS‚ğ•`‰æ
 	DrawGraph(0, 0, BackImg, TRUE);
 	DrawGraph(80, 30, LogoImg, TRUE);
@@ -54,7 +54,7 @@ void M_MenuLoadImg() {
 //ƒQ[ƒ€‚Ì”wŒiƒ[ƒhE•`‰æ
 void GameBackLoadImg()
 {
-	BackImg = LoadGraph("back.png");
+	BackImg = LoadGraph("Asset/back.png");
 }
 
 // ƒvƒŒƒCƒ„[‚ğ•`‰æ
