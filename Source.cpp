@@ -33,14 +33,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	//使用する画像をロード
-	void LoadImg();
+	LoadImg();
 
 	//メインメニューのループ
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_Z) == 0)
 	{
 		MENU:
 		//背景とロゴをロード・描画
-		void M_MenuLoadImg();
+		M_MenuLoadImg();
 		
 
 		
@@ -114,7 +114,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		if (SelectMainMenu == 0)
 		{
 
-			void GameBackLoadImg();
+			GameBackLoadImg();
 
 			// キャラクターの初期位置をセット
 			PlayerX = 10;
