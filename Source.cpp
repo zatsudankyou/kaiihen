@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include "Player.h"
 #include "LoadImg.h"
+#include "math.h"
 
  
 
@@ -10,6 +11,12 @@ int MouseX, MouseY;
 int SelectMainMenu = 0;
 int SelectSetting = 0;
 int UseFont;
+int hitX[20];
+int hitY[20];
+int M_X[20];
+int M_Y[20];
+int M_m[20];
+int M[20];
 
 //—”—p‚Ì•Ï”
 int r;
@@ -142,6 +149,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				{
 					AmmoY[i] = AmmoY[i] + 2;
 				}
+				for (int i = 0; i < 20; i++)
+				{
+					hitX[i] = AmmoX[i] - PlayerX;
+					hitY[i] = AmmoY[i] - PlayerY;
+					M_X[i] = pow(hitX[i], 2.0);
+					M_Y[i] = pow(hitY[i], 2.0);
+					M_m[i] = M_X[i] + M_Y[i];
+
+				}
+				for (int i = 0; i < 20; i++)
+				{
+					if (M_m[i] < 10)
+					{
+						goto MENU;
+					}
+				}
+				
 
 				// ƒL[“ü—Íæ“¾
 				Key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
@@ -262,7 +286,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_X) == 0)
 			{
 				DrawGraph(0, 0, AboutImg, TRUE);
-				DrawString(0, 0, "‚±‚ÌƒQ[ƒ€‚Ìƒo[ƒWƒ‡ƒ“‚Í~~~~‚Å‚·\n‚Ù‚©‚É‚à‚±‚±‚É’˜ì‚Æ‚©‚¢‚ë‚¢‚ëî•ñ‚ğÚ‚¹‚é—\’è\n\nI—¹‚·‚é‚É‚ÍZƒL[", GetColor(255, 255, 255));
+				DrawString(0, 0, "‚±‚ÌƒQ[ƒ€‚Ìƒo[ƒWƒ‡ƒ“‚Í~~~~‚Å‚·\n‚Ù‚©‚É‚à‚±‚±‚É’˜ì‚Æ‚©‚¢‚ë‚¢‚ëî•ñ‚ğÚ‚¹‚é—\’è\n\nI—¹‚·‚é‚É‚ÍXƒL[", GetColor(255, 255, 255));
 				// — ‰æ–Ê‚Ì“à—e‚ğ•\‰æ–Ê‚É”½‰f‚³‚¹‚é
 				ScreenFlip();
 			}

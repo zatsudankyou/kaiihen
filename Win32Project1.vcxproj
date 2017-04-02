@@ -167,22 +167,25 @@
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="About.png" />
-    <Image Include="Ammo.png" />
-    <Image Include="back.png" />
-    <Image Include="Logo.png" />
-    <Image Include="MainMBack.png" />
-    <Image Include="MenuCursor.png" />
-    <Image Include="MenuSelect0.png" />
-    <Image Include="MenuSelect0N.png" />
-    <Image Include="MenuSelect1.png" />
-    <Image Include="MenuSelect1N.png" />
-    <Image Include="MenuSelect2.png" />
-    <Image Include="MenuSelect2N.png" />
-    <Image Include="MenuSelect3.png" />
-    <Image Include="MenuSelect3N.png" />
-    <Image Include="Player.png" />
-    <Image Include="Wepon.png" />
+    <Image Include="Asset\About.png" />
+    <Image Include="Asset\Ammo.png" />
+    <Image Include="Asset\back.png" />
+    <Image Include="Asset\Logo.png" />
+    <Image Include="Asset\MainMBack.png" />
+    <Image Include="Asset\MenuCursor.png" />
+    <Image Include="Asset\MenuSelect0.png" />
+    <Image Include="Asset\MenuSelect0N.png" />
+    <Image Include="Asset\MenuSelect1.png" />
+    <Image Include="Asset\MenuSelect1N.png" />
+    <Image Include="Asset\MenuSelect2.png" />
+    <Image Include="Asset\MenuSelect2N.png" />
+    <Image Include="Asset\MenuSelect3.png" />
+    <Image Include="Asset\MenuSelect3N.png" />
+    <Image Include="Asset\Player.png" />
+    <Image Include="Asset\Wepon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Asset\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

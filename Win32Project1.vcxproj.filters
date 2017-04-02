@@ -34,53 +34,58 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="About.png">
+    <Image Include="Asset\About.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Ammo.png">
+    <Image Include="Asset\Ammo.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="back.png">
+    <Image Include="Asset\back.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Logo.png">
+    <Image Include="Asset\Logo.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MainMBack.png">
+    <Image Include="Asset\MainMBack.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuCursor.png">
+    <Image Include="Asset\MenuCursor.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect0.png">
+    <Image Include="Asset\MenuSelect0.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect0N.png">
+    <Image Include="Asset\MenuSelect0N.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect1.png">
+    <Image Include="Asset\MenuSelect1.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect1N.png">
+    <Image Include="Asset\MenuSelect1N.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect2.png">
+    <Image Include="Asset\MenuSelect2.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect2N.png">
+    <Image Include="Asset\MenuSelect2N.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect3.png">
+    <Image Include="Asset\MenuSelect3.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="MenuSelect3N.png">
+    <Image Include="Asset\MenuSelect3N.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Player.png">
+    <Image Include="Asset\Player.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Wepon.png">
+    <Image Include="Asset\Wepon.png">
       <Filter>リソース ファイル</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Asset\Thumbs.db">
+      <Filter>リソース ファイル</Filter>
+    </None>
   </ItemGroup>
 </Project>
