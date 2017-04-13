@@ -151,6 +151,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				}
 				for (int i = 0; i < 20; i++)
 				{
+					//‚ ‚½‚è”»’è‚ðŽO•½•û‚Ì’è—‚ðŽg‚Á‚ÄŒvŽZ
 					hitX[i] = AmmoX[i] - PlayerX;
 					hitY[i] = AmmoY[i] - PlayerY;
 					M_X[i] = pow(hitX[i], 2.0);
@@ -160,6 +161,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				}
 				for (int i = 0; i < 20; i++)
 				{
+					//“G’e–‹‚Æ‚Ì‚ ‚½‚è”»’è
 					if (M_m[i] < 10)
 					{
 						goto MENU;
