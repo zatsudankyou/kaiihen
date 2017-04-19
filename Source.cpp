@@ -143,6 +143,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 			// ループ
 			while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_X) == 0)
 			{
+				ResultdrawImg();
 
 				//下に落ちる
 				for (int i = 0; i < 20; i++)
@@ -151,10 +152,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 				}
 				for (int i = 0; i < 20; i++)
 				{
-					//現状では画像の角同士で判定がなされている模様
 					//あたり判定を三平方の定理を使って計算
-					hitX[i] = AmmoX[i] - PlayerX;
-					hitY[i] = AmmoY[i] - PlayerY;
+					hitX[i] = AmmoX[i] + 8 - PlayerX - 11;
+					hitY[i] = AmmoY[i] + 8 - PlayerY - 11;
 					M_X[i] = pow(hitX[i], 2.0);
 					M_Y[i] = pow(hitY[i], 2.0);
 					M_m[i] = M_X[i] + M_Y[i];
@@ -166,6 +166,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 					if (M_m[i] < 22)
 					{
 						//ここに復活処理やリザルト画面を置く予定
+						while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_X) == 0)
+						{
+							DrawGraph(0, 0, result, TRUE);
+							ScreenFlip();
+						}
 						goto MENU;
 					}
 				}

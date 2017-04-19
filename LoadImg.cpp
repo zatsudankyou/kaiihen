@@ -16,6 +16,7 @@ int SelectMainMenuImg3N;
 int AboutImg;
 int WeponImg;
 int MBackImg;
+int result;
 
 /* ここで画像ロード処理のすべてを扱います。
 新たな関数はLoadImg.hで宣言し、
@@ -55,6 +56,12 @@ void M_MenuLoadImg() {
 void GameBackLoadImg()
 {
 	BackImg = LoadGraph("Asset/back.png");
+}
+
+//リザルト画面
+void ResultdrawImg()
+{
+	result = LoadGraph("Asset/result.png");
 }
 
 // プレイヤーを描画

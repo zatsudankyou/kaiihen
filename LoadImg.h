@@ -9,6 +9,7 @@ void M_MenuLoadImg();
 void GameBackLoadImg(); 
 void DrawPlayer();
 void DrawM_Menu();
+void ResultdrawImg();
 
 //ロード画像のプロトタイプ宣言
 extern int PlayerImg;
@@ -26,3 +27,4 @@ extern int SelectMainMenuImg3N;
 extern int AboutImg;
 extern int WeponImg;
 extern int MBackImg;
+extern int result;
