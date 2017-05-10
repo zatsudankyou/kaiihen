@@ -169,6 +169,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 						while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_X) == 0)
 						{
 							DrawGraph(0, 0, result, TRUE);
+							DrawString(0, 0, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n続行するにはXキーです。", GetColor(255, 255, 255));
 							ScreenFlip();
 						}
 						goto MENU;
